@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 12px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  background-color: #121212; /* Spotify's dark background color */
+}
+
+.background {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.background img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  min-width: 50%;
+  min-height: 50%;
+  transform: scale(1.1);
+}
+
+.container {
+  background-color: #181818; /* Spotify's dark gray background color */
+  height: 100px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  border-left: solid 3px #0f0f0f;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  transition: all 0.5s ease;
+  margin-top: 20px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.player-progress {
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px auto 15px;
+  height: 6px;
+  width: 90%;
+}
+
+.progress {
+  background-color: #1db954; /* Spotify's green progress color */
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.music-duration {
+  position: relative;
+  top: -25px;
+  display: flex;
+  justify-content: space-between;
+  color: #b3b3b3; /* Spotify's light gray text color */
+}
+
+.player-controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+}
+
+.container:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 1);
+}
+
+.player-img {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.player-img:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  transition: all 0.5s;
+}
+
+.player-img img {
+  object-fit: cover;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+}
+
+.player-img:hover img {
+  box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.8);
+}
+
+.player-img img.active {
+  opacity: 1;
+}
+
+h2 {
+  font-size: 25px;
+  text-align: center;
+  font-weight: 500;
+  color: #fff; /* Spotify's white text color */
+  margin-bottom: -10px;
+}
+
+h3 {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #b3b3b3; /* Spotify's light gray text color */
+}
+
+
+
+.fa-solid {
+  font-size: 30px;
+  color: #fff; /* Spotify's white text color */
+  margin-right: 30px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.fa-solid:hover {
+  filter: brightness(40%);
+}
+
+.play-button {
+  font-size: 44px;
+  position: relative;
+  top: 3px;
+  color: #1db954; /* Spotify's green play button color */
+}
+
+/* added media queries for responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    max-width: 300px;
+    height: 100px;
+    margin: 20px auto;
+  }
+  .player-img {
+      height: 200px;
+      width: 200px;
+    }
+    .play-button {
+      font-size: 28px;
+    }
+  }
